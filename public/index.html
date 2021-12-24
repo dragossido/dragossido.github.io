@@ -108,12 +108,13 @@
       
       <a-entity position="0 4.4 -30"
                 geometry="primitive: plane; width: 16; height: 9;"
-                material="src: #penguin-sledding; transparent: true;"
+                material="src: #penguin-sledding; transparent: false;"
+      </a-entity>
       
-      <a-video src="#webcam_stream" width="16" height="9" position="0 4,4 -30"></a-video>
+    
+
       
-      <a-entity light="color: #ccccff; intensity: 1; type: ambient;" visible=""></a-entity>
-      <a-entity light="color: #ffaaff; intensity: 1.5" position="5 5 5"></a-entity>
+      
 
       <a-sky src="#sky" rotation="0 -90 0"></a-sky>
       <a-entity id="particles" particle-system="preset: snow"></a-entity>
