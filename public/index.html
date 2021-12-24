@@ -41,14 +41,14 @@
                     var video = document.getElementById('webcam_stream');
                     if(Hls.isSupported()) {
                     var hls = new Hls();
-                    hls.loadSource('https://beathubz.com/view/11daaa9a-c7dd-411a-9a77-0643ba176b09/');
+                    hls.loadSource('https://www.mixcloud.com/live/4TheMusicClub/');
                     hls.attachMedia(video);
                     hls.on(Hls.Events.MANIFEST_PARSED,function() {
                         video.play();
                     });
                 }
                 else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-                    video.src = 'https://beathubz.com/view/11daaa9a-c7dd-411a-9a77-0643ba176b09/';
+                    video.src = 'https://www.mixcloud.com/live/4TheMusicClub/';
                     video.addEventListener('loadedmetadata',function() {
                         video.play();
                     });
