@@ -35,27 +35,6 @@
     <!--<script src="https://unpkg.com/aframe-particle-system-component@1.0.5/dist/aframe-particle-system-component.min.js"></script>-->
     <script src="https://cdn.jsdelivr.net/gh/IdeaSpaceVR/aframe-particle-system-component@master/dist/aframe-particle-system-component.min.js"></script>
     <script src="/js/spawn-in-circle.component.js"></script>
-    <script>
-            AFRAME.registerComponent('hls_stream', {
-                init: function(){
-                    var video = document.getElementById('webcam_stream');
-                    if(Hls.isSupported()) {
-                    var hls = new Hls();
-                    hls.loadSource('https://www.mixcloud.com/live/4TheMusicClub/');
-                    hls.attachMedia(video);
-                    hls.on(Hls.Events.MANIFEST_PARSED,function() {
-                        video.play();
-                    });
-                }
-                else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-                    video.src = 'https://www.mixcloud.com/live/4TheMusicClub/';
-                    video.addEventListener('loadedmetadata',function() {
-                        video.play();
-                    });
-                    }
-                }
-            })
-      </script>
   </head>
   <body>
     <a-scene networked-scene="
@@ -67,8 +46,7 @@
         <img id="grid" src="https://img.gs/bbdkhfbzkk/stretch/https://i.imgur.com/25P1geh.png" crossorigin="anonymous">
         <img id="sky" src="https://img.gs/bbdkhfbzkk/2048x2048,stretch/" crossorigin="anonymous" />
         <img id="rug" src="https://cdn.glitch.me/dff00168-4294-4529-a60a-2de7ac9dba96/dj_toty_gee_3.png?v=1640382710250">
-        <video id="penguin-sledding" autoplay loop="true" src="https://beathubz.com/view/11daaa9a-c7dd-411a-9a77-0643ba176b09/" crossorigin="anonymous" ></video>
-        <video id="webcam_stream" crossorigin="anonymous"></video>
+        <video id="penguin-sledding" autoplay loop="true" src="https://www.mixcloud.com/live/4TheMusicClub/" crossorigin="anonymous" ></video>
 
         <!-- Templates -->
 
@@ -127,6 +105,10 @@
         geometry="primitive: plane; width: 10000; height: 10000;" rotation="-90 0 0"
         material="src: #rug; repeat: 10000 10000; transparent: true; metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;">
       </a-entity>
+      
+      <a-entity position="0 4.4 -30"
+                geometry="primitive: plane; width: 16; height: 9;"
+                material="src: #penguin-sledding; transparent: true;"
       
       <a-video src="#webcam_stream" width="16" height="9" position="0 4,4 -30"></a-video>
       
