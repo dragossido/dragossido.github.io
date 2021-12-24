@@ -35,6 +35,27 @@
     <!--<script src="https://unpkg.com/aframe-particle-system-component@1.0.5/dist/aframe-particle-system-component.min.js"></script>-->
     <script src="https://cdn.jsdelivr.net/gh/IdeaSpaceVR/aframe-particle-system-component@master/dist/aframe-particle-system-component.min.js"></script>
     <script src="/js/spawn-in-circle.component.js"></script>
+    <script>
+            AFRAME.registerComponent('hls_stream', {
+                init: function(){
+                    var video = document.getElementById('webcam_stream');
+                    if(Hls.isSupported()) {
+                    var hls = new Hls();
+                    hls.loadSource('https://beathubz.com/view/11daaa9a-c7dd-411a-9a77-0643ba176b09/');
+                    hls.attachMedia(video);
+                    hls.on(Hls.Events.MANIFEST_PARSED,function() {
+                        video.play();
+                    });
+                }
+                else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+                    video.src = 'https://beathubz.com/view/11daaa9a-c7dd-411a-9a77-0643ba176b09/';
+                    video.addEventListener('loadedmetadata',function() {
+                        video.play();
+                    });
+                    }
+                }
+            })
+      </script>
   </head>
   <body>
     <a-scene networked-scene="
@@ -47,6 +68,7 @@
         <img id="sky" src="https://img.gs/bbdkhfbzkk/2048x2048,stretch/" crossorigin="anonymous" />
         <img id="rug" src="https://cdn.glitch.me/dff00168-4294-4529-a60a-2de7ac9dba96/dj_toty_gee_3.png?v=1640382710250">
         <video id="penguin-sledding" autoplay loop="true" src="https://beathubz.com/view/11daaa9a-c7dd-411a-9a77-0643ba176b09/" crossorigin="anonymous" ></video>
+        <video id="webcam_stream" crossorigin="anonymous"></video>
 
         <!-- Templates -->
 
@@ -106,7 +128,7 @@
         material="src: #rug; repeat: 10000 10000; transparent: true; metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;">
       </a-entity>
       
-      <a-video src="https://beathubz.com/view/11daaa9a-c7dd-411a-9a77-0643ba176b09/" width="16" height="9" position="0 4,4 -30"></a-video>
+      <a-video src="#webcam_stream" width="16" height="9" position="0 4,4 -30"></a-video>
       
       <a-entity light="color: #ccccff; intensity: 1; type: ambient;" visible=""></a-entity>
       <a-entity light="color: #ffaaff; intensity: 1.5" position="5 5 5"></a-entity>
