@@ -53,6 +53,8 @@
         <a-asset-item id="speaker" src="https://cdn.glitch.me/dff00168-4294-4529-a60a-2de7ac9dba96/speaker.gltf?v=1640547060648"></a-asset-item>
         <a-asset-item id="trusse" src="https://cdn.glitch.me/dff00168-4294-4529-a60a-2de7ac9dba96/trusse.gltf?v=1640537094199"></a-asset-item>
         <a-asset-item id="movinghead" src="https://cdn.glitch.me/dff00168-4294-4529-a60a-2de7ac9dba96/movinghead.gltf?v=1640547735422"></a-asset-item>
+        <a-asset-item id="spk_floor" src="https://cdn.glitch.me/dff00168-4294-4529-a60a-2de7ac9dba96/spk_floor.gltf?v=1640549847607"></a-asset-item>
+        
         
 
         <!-- Templates -->
@@ -122,6 +124,12 @@
       <a-entity position="0 10 -30"
                 geometry="primitive: plane; width: 16; height: 9;"
                 material="src: #penguin-sledding; transparent: false;">
+      </a-entity>
+      
+      <a-entity gltf-model="#spk_floor"
+                position="11 6 -20"
+                rotation="0 0 180"
+                scale="0.08 0.08 0.08">
       </a-entity>
       
       <a-entity gltf-model="#speaker"
