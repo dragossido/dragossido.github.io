@@ -8,6 +8,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.slim.js"></script>
     <script src="/easyrtc/easyrtc.js"></script>
     <script src="https://unpkg.com/networked-aframe@^0.8.0/dist/networked-aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+    <script src="https://unpkg.com/super-hands@3.0.0/dist/super-hands.min.js"></script>
+	  <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
     <script>
       // see issue https://github.com/networked-aframe/networked-aframe/issues/267
       NAF.schemas.getComponentsOriginal = NAF.schemas.getComponents;
@@ -47,7 +51,7 @@
         <img id="sky" src="https://img.gs/bbdkhfbzkk/2048x2048,stretch/" crossorigin="anonymous" />
         <img id="rug" src="https://cdn.glitch.me/dff00168-4294-4529-a60a-2de7ac9dba96/dj_toty_gee_3.png?v=1640382710250">
         <video id="penguin-sledding" autoplay loop="true" src="" crossorigin="anonymous" ></video>
-        <a-asset-item id="speaker" src="assets/speaker.gltf"></a-asset-item>
+        <a-asset-item id="speaker" src="https://cdn.glitch.me/dff00168-4294-4529-a60a-2de7ac9dba96/speaker.gltf?v=1640533689775"></a-asset-item>
 
         <!-- Templates -->
 
@@ -119,8 +123,8 @@
       </a-entity>
       
       <a-entity gltf-model="#speaker"
-                position="1.35 0.25 -1.55"
-                rotation="0 -180 0">
+                position="0 10 -3"
+                rotation="0 0 0">
       </a-entity>
     
 
