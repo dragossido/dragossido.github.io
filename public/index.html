@@ -53,6 +53,7 @@
         <video id="penguin-sledding" autoplay loop="true" src="http://node-07.zeno.fm:80/22z8xb1c9yzuv" crossorigin="anonymous" ></video>
         <a-asset-item id="speaker" src="https://cdn.glitch.me/dff00168-4294-4529-a60a-2de7ac9dba96/speaker.gltf?v=1640547060648"></a-asset-item>
         <a-asset-item id="trusse" src="https://cdn.glitch.me/dff00168-4294-4529-a60a-2de7ac9dba96/trusse.gltf?v=1640537094199"></a-asset-item>
+        <a-asset-item id="movinghead" src="https://cdn.glitch.me/dff00168-4294-4529-a60a-2de7ac9dba96/movinghead.gltf?v=1640547735422"></a-asset-item>
         
 
         <!-- Templates -->
@@ -171,6 +172,11 @@
                 position="-23 6 -30"
                 scale="0.10 0.10 0.10"
                 rotation="0 0 90">
+      </a-entity>
+      
+      <a-entity gltf-model="#movinghead"
+                position="0 10 -30"
+                rotation="0 0 180">
       </a-entity>
       
       <a-sound src="src: url(http://node-07.zeno.fm:80/22z8xb1c9yzuv)" autoplay="true" position="0 0 0"></a-sound>
