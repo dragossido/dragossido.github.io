@@ -47,6 +47,7 @@
         <img id="sky" src="https://img.gs/bbdkhfbzkk/2048x2048,stretch/" crossorigin="anonymous" />
         <img id="rug" src="https://cdn.glitch.me/dff00168-4294-4529-a60a-2de7ac9dba96/dj_toty_gee_3.png?v=1640382710250">
         <video id="penguin-sledding" autoplay loop="true" src="" crossorigin="anonymous" ></video>
+        <a-asset-item id="speaker" src="assets/speaker.gltf"></a-asset-item>
 
         <!-- Templates -->
 
@@ -117,10 +118,11 @@
                 material="src: #penguin-sledding; transparent: false;">
       </a-entity>
       
+      <a-entity gltf-model="#speaker"
+                position="1.35 0.25 -1.55"
+                rotation="0 -180 0">
+      </a-entity>
     
-
-      
-      
 
       <a-sky src="#sky" rotation="0 -90 0"></a-sky>
       <a-entity id="particles" particle-system="preset: snow"></a-entity>
