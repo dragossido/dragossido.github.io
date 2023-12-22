@@ -41,10 +41,13 @@
     <script src="/js/spawn-in-circle.component.js"></script>
   </head>
   <body>
-    <a-scene networked-scene="
+    <a-scene
+      networked-scene="
       room: basic;
       debug: true;
-    ">
+      adapter: wseasyrtc;
+    "
+    >
       <a-assets>
 
         <img id="grid" src="https://img.gs/bbdkhfbzkk/stretch/https://i.imgur.com/25P1geh.png" crossorigin="anonymous">
