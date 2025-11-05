@@ -1,4 +1,4 @@
-# Networked-Aframe Starter Pack
+# Virtual event Starter Pack
 
 Built with [A-Frame](https://aframe.io/), a web framework for building multi-user virtual reality experiences. Works on Vive, Rift, desktop, mobile platforms.
 
