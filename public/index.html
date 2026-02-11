@@ -31,7 +31,7 @@
     "
   >
   -->
-    <a-assets>
+    <a-assets timeout="20000">
       <img
         id="rug"
         crossorigin="anonymous" 
@@ -45,24 +45,9 @@
         src="https://dragossido.github.io/public/assets/intro_vr.mp4"
       ></video>
       <a-asset-item
-        id="speaker"
-        crossorigin="anonymous" 
-        src="https://dragossido.github.io/blob/main/public/assets/speaker.gltf"
-      ></a-asset-item>
-      <a-asset-item
-        id="trusse"
-        crossorigin="anonymous" 
-        src="https://dragossido.github.io/public/assets/trusse.gltf"
-      ></a-asset-item>
-      <a-asset-item
-        id="movinghead"
-        crossorigin="anonymous" 
-        src="https://dragossido.github.io/public/assets/movinghead.gltf"
-      ></a-asset-item>
-      <a-asset-item
-        id="spk_floor"
-        crossorigin="anonymous" 
-        src="https://dragossido.github.io/public/assets/spk_floor.gltf"
+        id="strusse"
+        src="https://dragossido.github.io/public/assets/STTruss.glb"
+        crossorigin="anonymous"
       ></a-asset-item>
 
       <!-- Templates -->
@@ -101,18 +86,19 @@
       </template>
     </a-assets>
 
-    <a-entity
-      id="player"
-      camera
-      networked="template:#avatar-template;attachTemplateToLocal:false;"
-      position="0 1.7 0"
-      spawn-in-circle="radius:3"
-      wasd-controls
-      look-controls
-    >
-      <a-sphere class="head" visible="false" random-color></a-sphere>
+    <!-- Camera rig -->
+    <a-entity id="rig" position="0 1.7 6">
+      <a-entity camera look-controls wasd-controls></a-entity>
     </a-entity>
 
+    <!-- Lights (essential for GLB) -->
+    
+    <a-entity light="type: ambient; intensity: 0.9"></a-entity>
+    <a-entity light="type: directional; intensity: 1.2" position="2 6 4"></a-entity>
+    <a-entity light="type: directional; intensity: 0.8" position="-2 6 4"></a-entity>
+    
+
+    <!-- floor -->
     <a-entity
       position="0 0 0"
       geometry="primitive: plane; width: 10000; height: 10000;"
@@ -136,166 +122,18 @@
     </a-entity>
 
     <a-entity
-      gltf-model="#spk_floor"
-      position="11 6 -50"
-      rotation="0 0 180"
-      scale="0.08 0.08 0.08"
-    >
-    </a-entity>
+      id="strusseEntity"
+      gltf-model="#strusse"
+      position="0 0 -50"
+      rotation="0 180 0"
+      scale="4 4 1"
+    ></a-entity>
 
-    <a-entity
-      gltf-model="#spk_floor"
-      position="14 6 -50"
-      rotation="0 0 180"
-      scale="0.08 0.08 0.08"
-    >
-    </a-entity>
-    <a-entity
-      gltf-model="#spk_floor"
-      position="17 6 -50"
-      rotation="0 0 180"
-      scale="0.08 0.08 0.08"
-    >
-    </a-entity>
-
-    <a-entity
-      gltf-model="#spk_floor"
-      position="-11 6 -50"
-      rotation="0 0 180"
-      scale="0.08 0.08 0.08"
-    >
-    </a-entity>
-
-    <a-entity
-      gltf-model="#spk_floor"
-      position="-14 6 -50"
-      rotation="0 0 180"
-      scale="0.08 0.08 0.08"
-    >
-    </a-entity>
-    <a-entity
-      gltf-model="#spk_floor"
-      position="-17 6 -50"
-      rotation="0 0 180"
-      scale="0.08 0.08 0.08"
-    >
-    </a-entity>
-
-    <a-entity gltf-model="#speaker" position="-11 14 -50" rotation="0 180 0">
-    </a-entity>
-    <a-entity gltf-model="#speaker" position="14 14 -50" rotation="0 180 0">
-    </a-entity>
-    <a-entity
-      gltf-model="#trusse"
-      position="-10 18 -50"
-      scale="0.10 0.10 0.10"
-    >
-    </a-entity>
-    <a-entity
-      gltf-model="#trusse"
-      position="-20 18 -50"
-      scale="0.10 0.10 0.10"
-    >
-    </a-entity>
-    <a-entity gltf-model="#trusse" position="0 18 -50" scale="0.10 0.10 0.10">
-    </a-entity>
-    <a-entity
-      gltf-model="#trusse"
-      position="10 18 -50"
-      scale="0.10 0.10 0.10"
-    >
-    </a-entity>
-    <a-entity
-      gltf-model="#trusse"
-      position="20 18 -50"
-      scale="0.10 0.10 0.10"
-    >
-    </a-entity>
-    <a-entity
-      gltf-model="#trusse"
-      position="23 16 -50"
-      scale="0.10 0.10 0.10"
-      rotation="0 0 90"
-    >
-    </a-entity>
-    <a-entity
-      gltf-model="#trusse"
-      position="23 6 -50"
-      scale="0.10 0.10 0.10"
-      rotation="0 0 90"
-    >
-    </a-entity>
-    <a-entity
-      gltf-model="#trusse"
-      position="-23 16 -50"
-      scale="0.10 0.10 0.10"
-      rotation="0 0 90"
-    >
-    </a-entity>
-    <a-entity
-      gltf-model="#trusse"
-      position="-23 6 -50"
-      scale="0.10 0.10 0.10"
-      rotation="0 0 90"
-    >
-    </a-entity>
-
-    <a-entity
-      gltf-model="#movinghead"
-      position="-17 15.7 -49"
-      rotation="0 0 180"
-    >
-    </a-entity>
-    <a-entity
-      gltf-model="#movinghead"
-      position="-20 15.7 -49"
-      rotation="0 0 180"
-    >
-    </a-entity>
-
-    <a-entity
-      gltf-model="#movinghead"
-      position="17 15.7 -49"
-      rotation="0 0 180"
-    >
-    </a-entity>
-    <a-entity
-      gltf-model="#movinghead"
-      position="20 15.7 -49"
-      rotation="0 0 180"
-    >
-    </a-entity>
+    
 
     <a-sky color="#2f2c2c"></a-sky>
     <a-entity id="particles" particle-system="preset: snow"></a-entity>
   </a-scene>
 
-  <script>
-    // On mobile remove elements that are resource heavy
-    var isMobile = AFRAME.utils.device.isMobile();
-
-    if (isMobile) {
-      var particles = document.getElementById("particles");
-      particles.parentNode.removeChild(particles);
-    }
-
-    // Add error handling for better debugging
-    document.addEventListener('DOMContentLoaded', function() {
-      const scene = document.querySelector('a-scene');
-      
-      scene.addEventListener('renderstart', function() {
-        console.log('Scene loaded successfully');
-      });
-      
-      scene.addEventListener('error', function(err) {
-        console.error('Scene error:', err);
-      });
-      
-      // Add a simple test to see if A-Frame works
-      setTimeout(() => {
-        console.log('A-Frame version:', AFRAME.version);
-      }, 1000);
-    });
-  </script>
 </body>
 </html>
